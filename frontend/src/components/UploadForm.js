@@ -39,7 +39,8 @@ function UploadForm({ setSkills, fileInputRef }) {
     formData.append("file", file);
 
     try {
-      const response = await axios.post("http://localhost:8000/upload/", formData);
+     const response = await axios.post("https://skillextracter.onrender.com/upload/", formData);
+
       setSkills(response.data.skills);
       navigate("/skills");
     } catch (err) {
